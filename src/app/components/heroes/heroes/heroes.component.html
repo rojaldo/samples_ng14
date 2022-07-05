@@ -1,15 +1,4 @@
 <div class="container">
-    <div class="form-group">
-      <label for="">Hero Name</label>
-      <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" [(ngModel)]="newHero.name">
-    </div>
-    <div class="form-group">
-        <label for="">Hero Description</label>
-        <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" [(ngModel)]="newHero.description">
-      </div>
-    <button type="button" class="btn btn-primary mt-2" (click)="addHero()" [disabled]="newHero.name.length === 0">Add Hero</button>
-    <ul class="list-group mt-3">
-        <li class="list-group-item" *ngFor="let hero of heroes"><b>{{hero.name}}</b><br><p>{{hero.description}}</p></li>
-    </ul>
-        
+    <app-heroes-form (onNewHero)="addHero($event)"></app-heroes-form>
+    <app-heroes-list [heroesList]="heroes"></app-heroes-list>
 </div>

@@ -13,16 +13,14 @@ export class HeroesComponent implements OnInit {
     new Hero('Superman', 'Superhero'),
     new Hero('Spiderman', 'Spidy'),
   ];
-  newHero: Hero = new Hero();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  addHero(){
-    this.heroes.push(new Hero(this.newHero.name, this.newHero.description));
-    this.newHero = new Hero();
+  addHero(hero: Hero){
+    this.heroes.push(hero);
   }
 
 }

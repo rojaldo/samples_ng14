@@ -8,6 +8,8 @@ import { CalculatorComponent } from './components/calculator/calculator/calculat
 import { DisplayComponent } from './components/calculator/display/display.component';
 import { KeyboardComponent } from './components/calculator/keyboard/keyboard.component';
 import { HeroesComponent } from './components/heroes/heroes/heroes.component';
+import { HeroesFormComponent } from './components/heroes/heroes-form/heroes-form.component';
+import { HeroesListComponent } from './components/heroes/heroes-list/heroes-list.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { HeroesComponent } from './components/heroes/heroes/heroes.component';
     CalculatorComponent,
     DisplayComponent,
     KeyboardComponent,
-    HeroesComponent
+    HeroesComponent,
+    HeroesFormComponent,
+    HeroesListComponent
   ],
   imports: [
     BrowserModule,
