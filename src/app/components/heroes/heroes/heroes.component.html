@@ -1,11 +1,15 @@
 <div class="container">
     <div class="form-group">
       <label for="">Hero Name</label>
-      <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" [(ngModel)]="heroName">
+      <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" [(ngModel)]="newHero.name">
     </div>
-    <button type="button" class="btn btn-primary mt-2" (click)="addHero()" [disabled]="heroName.length === 0">Add Hero</button>
+    <div class="form-group">
+        <label for="">Hero Description</label>
+        <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" [(ngModel)]="newHero.description">
+      </div>
+    <button type="button" class="btn btn-primary mt-2" (click)="addHero()" [disabled]="newHero.name.length === 0">Add Hero</button>
     <ul class="list-group mt-3">
-        <li class="list-group-item" *ngFor="let hero of heroes">{{hero}}</li>
+        <li class="list-group-item" *ngFor="let hero of heroes"><b>{{hero.name}}</b><br><p>{{hero.description}}</p></li>
     </ul>
         
 </div>
