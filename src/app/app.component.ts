@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'samples';
+  title = 'esto es una prueba';
+  display = ''
+
+  handleClick(value: number | string) {
+    this.display += value.toString()
+  }
 }
