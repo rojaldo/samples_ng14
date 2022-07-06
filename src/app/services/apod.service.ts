@@ -26,9 +26,8 @@ export class ApodService {
       }
 
     }
-    console.log('getApod: ' + new Date(this._apod.date).getDate() + ' : '+ new Date().getDate());
     
-    if(!this._apod.date || new Date(this._apod.date).getDate() !== new Date().getDate()) {
+    if(!this._apod.date) {
       this.http.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY').subscribe(
         oberserver);
     }
