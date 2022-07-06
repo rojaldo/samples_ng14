@@ -10,6 +10,7 @@ import { KeyboardComponent } from './components/calculator/keyboard/keyboard.com
 import { HeroesComponent } from './components/heroes/heroes/heroes.component';
 import { HeroesFormComponent } from './components/heroes/heroes-form/heroes-form.component';
 import { HeroesListComponent } from './components/heroes/heroes-list/heroes-list.component';
+import { CalculatorService } from './services/calculator.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { HeroesListComponent } from './components/heroes/heroes-list/heroes-list
     NgbModule,
     FormsModule
   ],
-  providers: [],
+  providers: [CalculatorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
