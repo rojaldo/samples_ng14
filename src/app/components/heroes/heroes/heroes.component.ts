@@ -23,4 +23,12 @@ export class HeroesComponent implements OnInit {
     this.heroes.push(hero);
   }
 
+  getHeroes(){
+    return [...this.heroes];
+  }
+
+  removeHero(index: number){
+    this.heroes.splice(index, 1);
+  }
+
 }

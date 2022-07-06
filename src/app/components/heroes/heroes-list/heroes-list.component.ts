@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Hero } from 'src/app/models/hero';
 
 @Component({
@@ -10,9 +10,15 @@ export class HeroesListComponent implements OnInit {
 
   @Input() heroesList: Hero[] = []
 
+  @Output() onDeleteHero = new EventEmitter<number>();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  removeHero(index: number) {
+    this.onDeleteHero.emit(index);
   }
 
 }
