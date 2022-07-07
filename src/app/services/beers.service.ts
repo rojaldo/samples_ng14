@@ -8,7 +8,7 @@ import { Beer } from '../models/beer';
 })
 export class BeersService {
 
-  beers: Beer[] = [];
+  private _beers: Beer[] = [];
   beers$ = new BehaviorSubject<Beer[]>([]);
 
   constructor(private http: HttpClient) { }
@@ -18,7 +18,7 @@ export class BeersService {
       next: (data: any) => {
         console.log(data);
         for (const beer of data) {
-          this.beers.push(new Beer(beer));
+          this._beers.push(new Beer(beer));
         }
         this.beers$.next(this.beers);
       },
@@ -30,5 +30,13 @@ export class BeersService {
       }
     }
     this.http.get('https://api.punkapi.com/v2/beers').subscribe(observer);
+  }
+
+  get beers(): Beer[] {
+    let res: Beer[] = [];
+    for (const beer of this._beers) {
+      res.push(beer.clone());
+    }
+    return res;
   }
 }

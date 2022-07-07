@@ -3,8 +3,9 @@
 
 
 <div class="container">
+    <ngx-slider [(value)]="value" [(highValue)]="highValue" (userChange)="handleChange($event)" [options]="options"></ngx-slider>
     <div class="row">
-        <div class="col-sm-12 col-md-6 col-lg-4 mb-4" *ngFor="let beer of beers">
+        <div class="col-sm-12 col-md-6 col-lg-4 mb-4" *ngFor="let beer of filteredBeers">
             <div class="card h-100 ">
                 <img class="card-img-top mx-auto mt-2" [src]="beer.imageURL" [alt]="beer.name" style="width: 60px;">
                 <div class="card-body">

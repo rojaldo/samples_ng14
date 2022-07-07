@@ -16,7 +16,7 @@ export class ApodService {
 
   getApod(strDate?: string) {
 
-    let url = 'https://api.nasa.gov/planetary/apod?api_key=tqz634Z1x0LiJzjbhSyUoExrZaGKLM0MG1VnROR6';
+    let url = 'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY';
 
     if (strDate) {
       url += '&date=' + strDate;

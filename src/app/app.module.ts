@@ -14,6 +14,7 @@ import { CalculatorService } from './services/calculator.service';
 import { ApodComponent } from './components/apod/apod/apod.component';
 import {HttpClientModule} from '@angular/common/http';
 import { BeersComponent } from './components/beers/beers/beers.component';
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { BeersComponent } from './components/beers/beers/beers.component';
     BrowserModule,
     NgbModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxSliderModule
   ],
   providers: [CalculatorService],
   bootstrap: [AppComponent]

@@ -44,5 +44,17 @@ export class Beer{
     get abv(): number {
         return this._abv;
     }
-    
+
+    clone(): Beer {
+        return new Beer({
+            id: this._id,
+            name: this._name,
+            tagline: this._tagline,
+            first_brewed: this._firstBrewed,
+            description: this._description,
+            image_url: this._imageURL,
+            abv: this._abv
+        });
+    }
+
 }
