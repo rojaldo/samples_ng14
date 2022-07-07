@@ -1,10 +1,22 @@
-
-
-
-
 <div class="container">
-    <ngx-slider [(value)]="value" [(highValue)]="highValue" (userChange)="handleChange($event)" [options]="options"></ngx-slider>
-    <div class="row">
+    <ngx-slider [(value)]="value" [(highValue)]="highValue" (userChange)="handleChange($event)" [options]="options">
+    </ngx-slider>
+    <div ngbDropdown class="d-inline-block">
+        <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>{{orderString}}</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <button ngbDropdownItem (click)="handleOrder(0)">Alphabetical</button>
+            <button ngbDropdownItem (click)="handleOrder(1)">Abv</button>
+        </div>
+    </div>
+    <div ngbDropdown class="d-inline-block">
+        <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>{{ascendentString}}</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <button ngbDropdownItem (click)="handleAsc(true)">Ascendent</button>
+            <button ngbDropdownItem  (click)="handleAsc(false)">Descendent</button>
+        </div>
+    </div>
+
+    <div class="row mt-4">
         <div class="col-sm-12 col-md-6 col-lg-4 mb-4" *ngFor="let beer of filteredBeers">
             <div class="card h-100 ">
                 <img class="card-img-top mx-auto mt-2" [src]="beer.imageURL" [alt]="beer.name" style="width: 60px;">
