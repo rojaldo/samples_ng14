@@ -1,4 +1,4 @@
 <div class="container">
     <app-beers-selector (onSelectionsChange)="handleSelectionChange($event)"></app-beers-selector>
-    <app-beers-list [beers]="filteredBeers"></app-beers-list>
+    <app-beers-list [beers]="beers" [selection]="selection"></app-beers-list>
 </div>
