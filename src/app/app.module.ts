@@ -13,6 +13,7 @@ import { HeroesListComponent } from './components/heroes/heroes-list/heroes-list
 import { CalculatorService } from './services/calculator.service';
 import { ApodComponent } from './components/apod/apod/apod.component';
 import {HttpClientModule} from '@angular/common/http';
+import { BeersComponent } from './components/beers/beers/beers.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {HttpClientModule} from '@angular/common/http';
     HeroesComponent,
     HeroesFormComponent,
     HeroesListComponent,
-    ApodComponent
+    ApodComponent,
+    BeersComponent
   ],
   imports: [
     BrowserModule,

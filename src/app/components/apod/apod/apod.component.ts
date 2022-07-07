@@ -9,6 +9,7 @@ import { ApodService } from 'src/app/services/apod.service';
 export class ApodComponent implements OnInit {
 
   apod: any = {};
+  selectedDate!: any;
 
   constructor(private service: ApodService) { }
 
@@ -17,6 +18,14 @@ export class ApodComponent implements OnInit {
       this.apod = data;
     });
     this.service.getApod();
+  }
+
+  handleDate() {
+    let strDate = this.selectedDate.year + '-' + this.selectedDate.month + '-' + this.selectedDate.day;
+    console.log(strDate);
+    
+    this.service.getApod(strDate);
+    
   }
 
 }
