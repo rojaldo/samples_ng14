@@ -15,6 +15,8 @@ import { ApodComponent } from './components/apod/apod/apod.component';
 import {HttpClientModule} from '@angular/common/http';
 import { BeersComponent } from './components/beers/beers/beers.component';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
+import { BeersListComponent } from './components/beers/beers-list/beers-list.component';
+import { BeersSelectorComponent } from './components/beers/beers-selector/beers-selector.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
     HeroesFormComponent,
     HeroesListComponent,
     ApodComponent,
-    BeersComponent
+    BeersComponent,
+    BeersListComponent,
+    BeersSelectorComponent
   ],
   imports: [
     BrowserModule,
