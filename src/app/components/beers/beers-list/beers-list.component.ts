@@ -33,8 +33,8 @@ export class BeersListComponent implements OnInit, OnChanges {
   }
 
   getFilteredBeers(): void {
-    
-    this.filteredBeers = this.beers
+
+      this.filteredBeers = this.beers
       .filter(beer => {
         return beer.abv >= this.selection.value && beer.abv <= this.selection.highValue;
       })
@@ -63,6 +63,9 @@ export class BeersListComponent implements OnInit, OnChanges {
           }
         }
       });
+    
+    
+    
   }
 
 

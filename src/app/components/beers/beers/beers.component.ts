@@ -1,5 +1,6 @@
 import { Options } from '@angular-slider/ngx-slider';
 import { Component, OnInit } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { Beer } from 'src/app/models/beer';
 import { BeersService } from 'src/app/services/beers.service';
 
@@ -18,13 +19,15 @@ export class BeersComponent implements OnInit {
   }
 
   beers: Beer[] = [];
+  beers$: BehaviorSubject<Beer[]> = this.service.beers$;
 
   constructor(private service: BeersService) { }
 
   ngOnInit(): void {
-    this.service.beers$.subscribe(beers => {
-      this.beers = beers;
-    });
+    // this.service.beers$.subscribe(beers => {
+    //   this.beers = beers;
+    // });
+    this.beers$ = this.service.beers$;
     this.service.getBeers();
   }
 
