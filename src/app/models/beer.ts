@@ -45,6 +45,10 @@ export class Beer{
         return this._abv;
     }
 
+    set abv(value: number) {
+        this._abv = value;
+    }
+
     clone(): Beer {
         return new Beer({
             id: this._id,

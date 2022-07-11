@@ -18,6 +18,7 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { BeersListComponent } from './components/beers/beers-list/beers-list.component';
 import { BeersSelectorComponent } from './components/beers/beers-selector/beers-selector.component';
 import { BeersPipe } from './pipes/beers.pipe';
+import { AbvPipe } from './pipes/abv.pipe';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { BeersPipe } from './pipes/beers.pipe';
     BeersComponent,
     BeersListComponent,
     BeersSelectorComponent,
-    BeersPipe
+    BeersPipe,
+    AbvPipe
   ],
   imports: [
     BrowserModule,

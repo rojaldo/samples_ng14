@@ -1,5 +1,6 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Beer } from 'src/app/models/beer';
+import { OptionsService } from 'src/app/services/options.service';
 
 @Component({
   selector: 'app-beers-list',
@@ -16,9 +17,11 @@ export class BeersListComponent implements OnInit, OnChanges {
     highValue: 6
   }
 
+  maxAbv = 100;
+
   filteredBeers: Beer[] = [];
 
-  constructor() { }
+  constructor(private options: OptionsService) { }
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['selection']) {
       this.getFilteredBeers();
@@ -29,6 +32,7 @@ export class BeersListComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
+    this.maxAbv = this.options.maxAbv;
 
   }
 

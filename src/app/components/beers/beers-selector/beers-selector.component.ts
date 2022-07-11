@@ -1,5 +1,6 @@
 import { Options } from '@angular-slider/ngx-slider';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { OptionsService } from 'src/app/services/options.service';
 
 @Component({
   selector: 'app-beers-selector',
@@ -14,7 +15,7 @@ export class BeersSelectorComponent implements OnInit {
   highValue: number = 6;
   options: Options = {
     floor: 0,
-    ceil: 60,
+    ceil: this.optionsService.maxAbv,
     step: 0.1,
   };
 
@@ -24,7 +25,7 @@ export class BeersSelectorComponent implements OnInit {
   order = 0;
   ascendent = true;
 
-  constructor() { }
+  constructor(private optionsService: OptionsService) { }
 
   ngOnInit(): void {
     this.getOrderString();
