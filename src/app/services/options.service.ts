@@ -10,7 +10,6 @@ export class OptionsService {
   maxAbv$ = new BehaviorSubject<number>(this.maxAbv);
 
   get maxAbv(): number {
-    console.log('get maxAbv: ' + this._maxAbv);
     return this._maxAbv;
   }
 
@@ -25,7 +24,6 @@ export class OptionsService {
       
     }
     this.maxAbv = value;
-    this.maxAbv$.next(this.maxAbv);
   }
 
   constructor() { }
