@@ -19,7 +19,8 @@ import { BeersListComponent } from './components/beers/beers-list/beers-list.com
 import { BeersSelectorComponent } from './components/beers/beers-selector/beers-selector.component';
 import { BeersPipe } from './pipes/beers.pipe';
 import { AbvPipe } from './pipes/abv.pipe';
-import { TemplateFormComponent } from './forms/template-form/template-form.component';
+import { TemplateFormComponent } from './components/forms/template-form/template-form.component';
+import { ReactiveFormComponent } from './components/forms/reactive-form/reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -37,14 +38,15 @@ import { TemplateFormComponent } from './forms/template-form/template-form.compo
     BeersPipe,
     AbvPipe,
     TemplateFormComponent,
+    ReactiveFormComponent,
   ],
   imports: [
     BrowserModule,
     NgbModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
-    NgxSliderModule,
-    ReactiveFormsModule
+    NgxSliderModule
   ],
   providers: [CalculatorService],
   bootstrap: [AppComponent]
