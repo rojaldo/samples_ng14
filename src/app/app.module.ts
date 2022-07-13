@@ -21,6 +21,8 @@ import { BeersPipe } from './pipes/beers.pipe';
 import { AbvPipe } from './pipes/abv.pipe';
 import { TemplateFormComponent } from './components/forms/template-form/template-form.component';
 import { ReactiveFormComponent } from './components/forms/reactive-form/reactive-form.component';
+import { AppRoutingModule } from './app-routing/app-routing.module';
+import { ErrorComponent } from './components/error/error.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,7 @@ import { ReactiveFormComponent } from './components/forms/reactive-form/reactive
     AbvPipe,
     TemplateFormComponent,
     ReactiveFormComponent,
+    ErrorComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,8 @@ import { ReactiveFormComponent } from './components/forms/reactive-form/reactive
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgxSliderModule
+    NgxSliderModule,
+    AppRoutingModule
   ],
   providers: [CalculatorService],
   bootstrap: [AppComponent]

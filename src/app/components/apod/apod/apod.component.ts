@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApodService } from 'src/app/services/apod.service';
+import { Apod } from 'src/app/models/apod';
 
 @Component({
   selector: 'app-apod',
@@ -8,13 +9,13 @@ import { ApodService } from 'src/app/services/apod.service';
 })
 export class ApodComponent implements OnInit {
 
-  apod: any = {};
+  apod!: Apod;
   selectedDate!: any;
 
   constructor(private service: ApodService) { }
 
   ngOnInit(): void {
-    this.service.apod$.subscribe(data => {
+    this.service.apod$.subscribe((data: Apod) => {
       this.apod = data;
     });
     this.service.getApod();

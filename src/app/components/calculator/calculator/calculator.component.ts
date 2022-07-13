@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CalculatorService } from 'src/app/services/calculator.service';
 
 @Component({
@@ -10,7 +11,10 @@ export class CalculatorComponent implements OnInit {
 
   display = ''
 
-  constructor(private service: CalculatorService) { }
+  constructor(
+    private service: CalculatorService, 
+    private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.service.display$.subscribe(display => {

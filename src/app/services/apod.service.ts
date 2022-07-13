@@ -10,7 +10,7 @@ import { Apod } from '../models/apod';
 export class ApodService {
 
   private _apod!: Apod;
-  apod$ = new BehaviorSubject<any>(this._apod);
+  apod$ = new BehaviorSubject<Apod>(this._apod);
 
   constructor(private http: HttpClient) { }
 
