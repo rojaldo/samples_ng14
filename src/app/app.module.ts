@@ -23,6 +23,7 @@ import { TemplateFormComponent } from './components/forms/template-form/template
 import { ReactiveFormComponent } from './components/forms/reactive-form/reactive-form.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { ErrorComponent } from './components/error/error.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { ErrorComponent } from './components/error/error.component';
     TemplateFormComponent,
     ReactiveFormComponent,
     ErrorComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
