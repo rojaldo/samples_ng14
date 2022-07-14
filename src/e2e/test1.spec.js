@@ -16,13 +16,14 @@ describe('test1', function() {
   it('test1', async function() {
     await driver.get("http://localhost:4200/calculator")
     await driver.manage().window().setRect({ width: 1878, height: 936 })
-    await driver.findElement(By.css(".calculator__key:nth-child(11)")).click()
-    await driver.findElement(By.css(".calculator__key:nth-child(12)")).click()
-    await driver.findElement(By.css(".calculator__key:nth-child(1)")).click()
-    await driver.findElement(By.css(".calculator__key:nth-child(8)")).click()
-    await driver.findElement(By.css(".calculator__key:nth-child(9)")).click()
-    await driver.findElement(By.css(".calculator__key--enter")).click()
-    await driver.findElement(By.css(".calculator__output")).click()
-    assert.equal(await driver.findElement(By.css(".calculator__output")).getText(), "12+45=57")
-  })
+    await driver.findElement(By.id("1")).click()
+    await driver.findElement(By.id("2")).click()
+    await driver.findElement(By.id("+")).click()
+    await driver.findElement(By.id("4")).click()
+    await driver.findElement(By.id("5")).click()
+    await driver.findElement(By.id("=")).click()
+    await driver.findElement(By.id("display")).getText().then(function(text) {
+      assert.equal(text, "12+45=57")
+    }
+  )})
 })

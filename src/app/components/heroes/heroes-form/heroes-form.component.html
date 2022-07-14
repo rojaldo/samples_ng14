@@ -1,9 +1,9 @@
 <div class="form-group">
     <label for="">Hero Name</label>
-    <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" [(ngModel)]="newHero.name">
+    <input type="text" class="form-control" name="" id="heroName" aria-describedby="helpId" placeholder="" [(ngModel)]="newHero.name">
   </div>
   <div class="form-group">
       <label for="">Hero Description</label>
-      <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" [(ngModel)]="newHero.description">
+      <input type="text" class="form-control" name="" id="heroDescription" aria-describedby="helpId" placeholder="" [(ngModel)]="newHero.description">
     </div>
-  <button type="button" class="btn btn-primary mt-2" (click)="addHero()" [disabled]="newHero.name.length === 0">Add Hero</button>
+  <button type="button" class="btn btn-primary mt-2" id="addHeroBtn" (click)="addHero()" [disabled]="newHero.name.length === 0">Add Hero</button>
