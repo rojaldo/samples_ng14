@@ -8,6 +8,7 @@ export class Apod {
     private _title!: string;
     private _url!: string;
     private _hdUrl!: string;
+    private _videoID!: string;
 
     constructor(data: any) {
         this._date = data.date;
@@ -17,6 +18,13 @@ export class Apod {
         this._title = data.title;
         this._url = data.url;
         this._hdUrl = data.hdurl;
+        if(this.isVideo()){
+            this._videoID = this.youtubeParser();
+        }
+    }
+
+    get videoID(): string {
+        return this._videoID;
     }
 
     get date(): string {
@@ -52,6 +60,20 @@ export class Apod {
             return false;
         }
         return moment(this._date).isSame(strDate, 'day');
+    }
+
+    isImage(): boolean {
+        return this._mediaType === 'image';
+    }
+
+    isVideo(): boolean {
+        return this._mediaType === 'video';
+    }
+
+    youtubeParser(): string {
+        var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+        var match = this.url.match(regExp);
+        return (match&&match[7].length==11)? match[7] : '';
     }
 
 }

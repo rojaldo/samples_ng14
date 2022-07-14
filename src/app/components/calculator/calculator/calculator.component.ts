@@ -12,9 +12,7 @@ export class CalculatorComponent implements OnInit {
   display = ''
 
   constructor(
-    private service: CalculatorService, 
-    private route: ActivatedRoute,
-    private router: Router) { }
+    private service: CalculatorService) { }
 
   ngOnInit(): void {
     this.service.display$.subscribe(display => {

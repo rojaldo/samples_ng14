@@ -11,7 +11,6 @@ import { HeroesComponent } from './components/heroes/heroes/heroes.component';
 import { HeroesFormComponent } from './components/heroes/heroes-form/heroes-form.component';
 import { HeroesListComponent } from './components/heroes/heroes-list/heroes-list.component';
 import { CalculatorService } from './services/calculator.service';
-import { ApodComponent } from './components/apod/apod/apod.component';
 import {HttpClientModule} from '@angular/common/http';
 import { BeersComponent } from './components/beers/beers/beers.component';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
@@ -24,6 +23,7 @@ import { ReactiveFormComponent } from './components/forms/reactive-form/reactive
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { ErrorComponent } from './components/error/error.component';
 import { LoginComponent } from './components/login/login.component';
+import { HeroesService } from './services/heroes.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +34,6 @@ import { LoginComponent } from './components/login/login.component';
     HeroesComponent,
     HeroesFormComponent,
     HeroesListComponent,
-    ApodComponent,
     BeersComponent,
     BeersListComponent,
     BeersSelectorComponent,
@@ -54,7 +53,7 @@ import { LoginComponent } from './components/login/login.component';
     NgxSliderModule,
     AppRoutingModule
   ],
-  providers: [CalculatorService],
+  providers: [CalculatorService, HeroesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -13,11 +13,11 @@ import { LoginComponent } from '../components/login/login.component';
 const routes: Routes = [
   { path: 'calculator', component: CalculatorComponent },
   { path: 'heroes', component: HeroesComponent, canActivate: [HeroesGuard] },
-  { path: 'apod', component: ApodComponent },
   { path: 'beers', component: BeersComponent },
   { path: 'forms', component: ReactiveFormComponent },
   { path: 'login', component: LoginComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'apod', loadChildren: () => import('../apod/apod.module').then(m => m.ApodModule) },
   { path: '**', component: ErrorComponent }
 ]; // sets up routes constant where you define your routes
 

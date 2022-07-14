@@ -6,7 +6,8 @@
         <h1 class="display-3">{{apod.title}}</h1>
         <p class="lead">{{apod.date}}</p>
         <div class="container-fluid d-flex">
-            <img [src]="apod.url" alt="" class="mx-auto">
+            <img [src]="apod.url" alt="" class="mx-auto" *ngIf="apod.isImage()">
+            <youtube-player [videoId]="apod.videoID" *ngIf="apod.isVideo()" class="mx-auto"></youtube-player>
         </div>
         <hr class="my-2">
         <p>{{apod.explanation}}</p>
